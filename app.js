@@ -94,7 +94,7 @@ function buildChapters(){
     const items = PLACES.filter(p => p.cat === c.id)
                         .sort((a,b) => dist(HOME,a) - dist(HOME,b));
     const cards = items.map(cardHTML).join('');
-    return `<div class="chapter">
+    return `<div class="chapter" style="--chapter-accent:${c.color}">
       <div class="chapter-head">
         <div class="chapter-ic" style="background:${c.color}22">${c.icon}</div>
         <div style="flex:1">
