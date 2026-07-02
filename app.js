@@ -346,6 +346,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // register service worker for offline
   if('serviceWorker' in navigator){
     navigator.serviceWorker.register('sw.js').catch(()=>{});
+    // ladda om en gång automatiskt när en ny version tar över
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if(reloaded) return;
+      reloaded = true;
+      location.reload();
+    });
   }
 
   // öppna delat ställe direkt om URL har #plats=N
