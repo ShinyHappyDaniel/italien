@@ -328,6 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildInfo();
   buildRules();
   render();
+  switchView('karta');  // sätt korrekt tillstånd för sök/filter/flikar vid start
 
   document.getElementById('search').addEventListener('input', e => {
     searchTerm = e.target.value; render();
